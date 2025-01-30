@@ -1,6 +1,8 @@
-<input name="name-search" placeholder="Search By Name" type="text" autocomplete="off" [(ngModel)]="searchTerm" />
+<div class="search-container">
+    <input name="name-search" placeholder="Search By Name" type="text" autocomplete="off" [(ngModel)]="searchTerm" />
 
-<span (click)="getCharacters(1)">Search</span>
+    <span tabindex="0" class="searchbox" (click)="getCharacters(1)">Search</span>
+</div>
 
 <table *ngIf="characterCall">
     <tbody *ngIf="characterCall.results">
@@ -13,7 +15,8 @@
     </tbody>
 </table>
 
-
-<ng-container *ngIf="pages">
-    <span *ngFor="let p of pages" [ngClass]="{'active': (p === currentPage)}" (click)="getCharacters(p)">{{p}}</span>
-</ng-container>
+<div class="pages">
+    <ng-container *ngIf="pages">
+        <span *ngFor="let p of pages.slice(0, 6);" [ngClass]="{'active': (p === currentPage)}" (click)="getCharacters(p)">{{p}}</span>
+    </ng-container>
+</div>

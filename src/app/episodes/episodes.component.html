@@ -7,6 +7,8 @@
     </tbody>
 </table>
 
-<ng-container *ngIf="pages">
-    <span *ngFor="let p of pages" [ngClass]="{'active': (p===currentPage)}" (click)="getEpisodes(p)">{{p}}</span>
-</ng-container>
+<div class="pages">
+    <ng-container *ngIf="pages">
+        <span *ngFor="let p of pages" [ngClass]="{'active': (p===currentPage)}" (click)="getEpisodes(p)">{{p}}</span>
+    </ng-container>
+</div>

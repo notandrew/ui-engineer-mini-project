@@ -1,1 +1,37 @@
-div.individual div.card { margin: 0px auto; width: 300px; }
+@import "../../styles.scss";
+
+$image-size: 300px;
+
+.card {
+    margin: 0 auto;
+    width: 620px;
+    background: $dark-secondary-color;
+    padding: 37px 160px;
+    border-radius: $border-radius-medium;
+
+    img {
+        width: $image-size;
+        height: $image-size;
+        border-radius: $border-radius-large;
+        margin-bottom: 49px;
+    }
+
+    .card-title {
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-kind-of-large-but-larger;
+        line-height: 42px;
+        margin-bottom: 34px;
+    }
+
+    .card-subtitle {
+        font-weight: $font-weight-normal;
+        font-size: $font-size-medium;
+        line-height: 24px;
+        margin-bottom: 16px;
+
+        span:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+}

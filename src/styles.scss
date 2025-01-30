@@ -1,1 +1,153 @@
 /* You can add global styles to this file, and also import other style files */
+
+$title-color: #292D34;
+$primary-color: #fff;
+$background-color: #1e272e;
+$unselected-color: #ABAEB0;
+$accent-color: #7B68EE;
+$dark-accent-color: #384047;
+$dark-secondary-color: #2B343B;
+$placeholder-color: #7C828D;
+
+$font-size-supertiny: 14px;
+$font-size-small: 16px;
+$font-size-medium: 18px;
+$font-size-large: 32px;
+$font-size-kind-of-large-but-larger: 36px;
+$font-size-reallyreallylarge: 64px;
+
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
+$border-radius-default: 6px;
+$border-radius-medium: 10px;
+$border-radius-large: 100px;
+
+$main-width: 1004px;
+
+* {
+    box-sizing: border-box;
+}
+
+*,
+td {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, roboto, Helvetica Neue, helvetica, arial, sans-serif;
+    /* SF Pro Text should be rendered with -apple-system */
+}
+
+body {
+    margin: 0 0 100px 0;
+    padding: 0;
+    background: $background-color;
+}
+
+header,
+main {
+    width: 100%;
+}
+
+header {
+    background: $primary-color url('/assets/the-rick-and-morty-logo.svg') no-repeat center;
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: $title-color;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-reallyreallylarge;
+        line-height: 76px;
+    }
+}
+
+main {
+    color: $primary-color;
+    width: $main-width;
+    margin: auto;
+    text-align: center;
+
+    .nav-links {
+        display: inline-block;
+        padding-top: 52px;
+        margin-bottom: 72px;
+
+        .nav-link {
+            font-weight: $font-weight-normal;
+            font-size: $font-size-large;
+            line-height: 32px;
+            text-decoration: none;
+            user-select: none;
+
+            &:first-child {
+                margin-right: 47px;
+            }
+
+            &,
+            &:active,
+            &:visited {
+                color: $unselected-color;
+            }
+
+            &.active-link {
+                color: $primary-color;
+                font-weight: $font-weight-semibold;
+            }
+        }
+    }
+
+    .pages {
+        display: inline-block;
+        font-size: $font-size-supertiny;
+
+        span {
+            cursor: pointer;
+        }
+
+        span:not(:last-child) {
+            margin-right: 16px;
+        }
+
+        .active {
+            color: $accent-color;
+            cursor: default;
+        }
+    }
+
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin-bottom: 36px;
+        text-align: initial;
+        width: 100%;
+    }
+
+    td {
+        font-weight: $font-weight-normal;
+        font-size: $font-size-small;
+        line-height: 18px;
+
+        padding: 11px 16px;
+        /* this works out to cell heights of 40px tall but  allows taller fonts to render properly.  We could just change the size to 40px if that's not a consideration */
+        user-select: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    tr {
+        border-radius: $border-radius-default;
+        box-shadow: 0 0 1px 1px $dark-accent-color;
+        background: $dark-secondary-color;
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            background: $dark-accent-color;
+            color: $accent-color;
+        }
+    }
+}

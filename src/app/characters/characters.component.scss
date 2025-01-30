@@ -1,0 +1,40 @@
+@import "../../styles.scss";
+
+::placeholder {
+    color: $placeholder-color;
+    font-size: $font-size-small;
+    opacity: 1;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 40px;
+
+    .searchbox {
+        background: $accent-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-medium;
+        line-height: 18px;
+
+        width: 212px;
+        padding: 10px 0;
+        border-radius: $border-radius-default;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    input {
+        padding: 10px;
+        width: 100%;
+        margin-right: 24px;
+        border-radius: $border-radius-default;
+        border: 0;
+    }
+}
+
+td:first-child {
+    width: 50%;
+}
